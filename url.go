@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-type url struct {
+type URL struct {
 	Protocol  string
 	Hostname  string
 	Subdomain string
@@ -18,10 +18,10 @@ type url struct {
 	Input     string
 }
 
-func Parse(s string) url {
+func Parse(s string) URL {
 	rx := regexp.MustCompile(`(?:(?P<protocol>[a-z]+):\/\/)?(?P<hostname>(?:\.?[a-z0-9]+)+)(?::(?P<port>\d+))?(?:\/(?P<path>(?:[^\s\"\#\'\<\>\?]+)))?(?:\?(?P<query>[^\s\"\#\'\<\>\?]+))?(?:#(?P<fragment>(?:[^\s\"\#\'\<\>\?]+)?)$)?`)
 	match := rx.FindStringSubmatch(s)
-	u := url{}
+	u := URL{}
 
 	for i, name := range rx.SubexpNames() {
 		rm := match[i]
