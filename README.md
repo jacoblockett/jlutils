@@ -63,6 +63,7 @@ type URL struct {
 	Path      string
 	Query     string
 	Fragment  string
+	Input     string
 }
 
 func ParseURL(url string) URL{}
@@ -71,7 +72,7 @@ func ParseURL(url string) URL{}
 ```go
 u := jlutils.ParseURL("https://test.abc.com/somepath?lang=go")
 
-fmt.Printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s", u.Protocol, u.Hostname, u.Subdomain, u.Domain, u.Port, u.Path, u.Query, u.Fragment)
+fmt.Printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s", u.Protocol, u.Hostname, u.Subdomain, u.Domain, u.Port, u.Path, u.Query, u.Fragment, u.Input)
 
 /*
 https
@@ -82,5 +83,6 @@ abc.com
 somepath
 lang=go
 
+https://test.abc.com/somepath?lang=go
 */
 ```
