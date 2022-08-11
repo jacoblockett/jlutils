@@ -1,4 +1,4 @@
-# JLUtils
+# jlutils
 
 ### A utility library useful mostly to myself, because I hate rewriting code with a passion
 
@@ -32,7 +32,7 @@ Parsing:
 
 #### ContainsString
 
-iterates over a string slice/array and returns a boolean if a given string argument exists
+Iterates over a string slice/array and returns a boolean if a given string argument exists
 
 ```go
 func ContainsString(collection []string, s string) bool
