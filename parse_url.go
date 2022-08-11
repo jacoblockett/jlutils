@@ -15,6 +15,7 @@ type URL struct {
 	Path      string
 	Query     string
 	Fragment  string
+	Input     string
 }
 
 func ParseURL(s string) URL {
@@ -45,6 +46,8 @@ func ParseURL(s string) URL {
 			}
 		}
 	}
+
+	u.Input = s
 
 	return u
 }
