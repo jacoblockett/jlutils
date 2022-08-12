@@ -1,2 +1,6 @@
 - Add more tests to url_test.go
 - Create filename/dirname sanitizer
+- Add tests for DownloadImgToFile
+- Add DownloadImgToFile to README.md
+- Add tests for QueryToMap in parse_url.go
+- Add QueryToMap to README.md
