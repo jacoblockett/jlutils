@@ -6,21 +6,21 @@ import (
 	"strings"
 )
 
-type QueryToStruct func(s string) Query
+type QueryToMap func(s string) Query
 
 type Query map[string]string
 
 type URL struct {
-	Protocol      string
-	Hostname      string
-	Subdomain     string
-	Domain        string
-	Port          int
-	Path          string
-	Query         string
-	Fragment      string
-	Input         string
-	QueryToStruct QueryToStruct
+	Protocol   string
+	Hostname   string
+	Subdomain  string
+	Domain     string
+	Port       int
+	Path       string
+	Query      string
+	Fragment   string
+	Input      string
+	QueryToMap QueryToMap
 }
 
 func ParseURL(s string) URL {
@@ -53,7 +53,7 @@ func ParseURL(s string) URL {
 	}
 
 	u.Input = s
-	u.QueryToStruct = func(s string) (q Query) {
+	u.QueryToMap = func(s string) (q Query) {
 		sp := strings.Split(s, "&")
 
 		for _, p := range sp {
