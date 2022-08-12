@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func DownloadImgToFile(u string, p string) error {
+func DownloadFile(u string, p string) error {
 	r, err := http.Get(u)
 	if err != nil {
 		return err
