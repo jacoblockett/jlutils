@@ -1,1 +1,2 @@
 - Add more tests to url_test.go
+- Create filename/dirname sanitizer
